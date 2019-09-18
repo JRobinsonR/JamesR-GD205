@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 
 public Vector3 pos = new Vector3(5f,10f,15f);
 public Transform playerPiece;
+public Transform warpR;
+public Transform warpW;
 public Vector3 playerStart;
 
     // Start is called before the first frame update
@@ -55,6 +57,10 @@ public Vector3 playerStart;
             
             //modify the playerPiece position by tileAmount on the z axis
             playerPiece.position += new Vector3(-5f,0f, 0f);
+        }
+        if (playerPiece.position == warpW.position){
+        playerPiece.position = playerStart;
+        
         }
         }
 }
