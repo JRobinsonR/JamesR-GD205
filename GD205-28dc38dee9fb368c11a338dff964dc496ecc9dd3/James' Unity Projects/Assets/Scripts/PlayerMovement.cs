@@ -5,71 +5,80 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-public Vector3 pos = new Vector3(5f,10f,15f);
-public Transform playerPiece;
-public Transform warpR, warpW;
-public Transform obstacle;
-public Transform RoadBlocks;
-public Vector3 playerStart;
-public TextMesh playerMsg;
+    public Vector3 pos = new Vector3(5f, 10f, 15f);
+    public Transform playerPiece;
+    public Transform warpR, warpW;
+    public Transform Obstacle;
+    public Transform PlayerGoal;
+    public Vector3 playerStart;
+    public TextMesh playerMsg;
+    public float tileAmount = 5f;
+    public AudioClip wrong;
+    AudioSource Sound;
 
     // Start is called before the first frame update
     void Start()
     {
-         playerStart = playerPiece.position;
+        playerStart = playerPiece.position;
+        //Sound = GetComponent<>
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W)) 
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-           if(obstacle.position != playerPiece.position +new Vector3(0f,0f, 2.5f)){
-            //modify the playerPiece position by tileAmount on the z axis
-            playerPiece.position += new Vector3(0f,0f, .5f);
+            if (Obstacle.position != playerPiece.position + new Vector3(0f, 0f, tileAmount))
+            {
+                //modify the playerPiece position by tileAmount on the z axis
+                playerPiece.position += new Vector3(0f, 0f, tileAmount);
             }
-    }
-    if (Input.GetKeyDown(KeyCode.S)) 
-        {
-            if(obstacle.position != playerPiece.position +new Vector3(0f,0f, -2.5f)){
-            //modify the playerPiece position by tileAmount on the z axis
-            playerPiece.position += new Vector3(0f,0f, -.5f);
         }
-        }
-    if (Input.GetKeyDown(KeyCode.UpArrow)) 
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if(obstacle.position != playerPiece.position +new Vector3(0f,2.5f, 0f)){
-            //modify the playerPiece position by tileAmount on the z axis
-            playerPiece.position += new Vector3(0f,.5f, 0f);
+            if (Obstacle.position != playerPiece.position + new Vector3(0f, 0f, -tileAmount))
+            {
+                //modify the playerPiece position by tileAmount on the z axis
+                playerPiece.position += new Vector3(0f, 0f, -tileAmount);
             }
+        }
+        
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (Obstacle.position != playerPiece.position + new Vector3(tileAmount, 0f, 0f))
+            {
+                //modify the playerPiece position by tileAmount on the x axis
+                playerPiece.position += new Vector3(tileAmount, 0f, 0f);
             }
-     if (Input.GetKeyDown(KeyCode.DownArrow)) {
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (Obstacle.position != playerPiece.position + new Vector3(-tileAmount, 0f, 0f))
+            {
+                //modify the playerPiece position by tileAmount on the x axis
+                playerPiece.position += new Vector3(-tileAmount, 0f, 0f);
+            }
+        } //Need help modifying collisions so half the sphere doesn't go in before it stops.
 
-        if(obstacle.position != playerPiece.position +new Vector3(0f,-2.5f, 0f)){
-            //modify the playerPiece position by tileAmount on the z axis
-            playerPiece.position += new Vector3(0f,-.5f, 0f);
-        }
-         }
-     if (Input.GetKeyDown(KeyCode.LeftArrow)) 
+        if (playerPiece.position == warpW.position) //Please leave me an example of an array text for several objects. Thank you!
         {
-        if(obstacle.position != playerPiece.position +new Vector3(2.5f,0f, 0f)){
-            //modify the playerPiece position by tileAmount on the z axis
-            playerPiece.position += new Vector3(.5f,0f, 0f);
+            playerPiece.position = playerStart;
+
+            //the matching sound would go here, but I couldn't add it in.
+            playerMsg.text = "Try Again";
+
         }
-        }
-     if (Input.GetKeyDown(KeyCode.RightArrow)) 
+
+        if (playerPiece.position == warpR.position) //Please leave me an example of an array text for several objects. Thank you!
         {
-            if(obstacle.position != playerPiece.position +new Vector3(-2.5f,0f, 0f)){
-            //modify the playerPiece position by tileAmount on the z axis
-            playerPiece.position += new Vector3(-.5f,0f, 0f);
+
+            playerMsg.text = "Good Job!";
         }
+        if (playerPiece.position == PlayerGoal.position)
+        {
+
+            playerMsg.text = "You Win!!!";
         }
-        
-    if (playerPiece.position == warpW.position){
-        playerPiece.position = playerStart;
-        
-        playerMsg.text = "Try Again";
-        
-        }
-        }
+    }
 }
