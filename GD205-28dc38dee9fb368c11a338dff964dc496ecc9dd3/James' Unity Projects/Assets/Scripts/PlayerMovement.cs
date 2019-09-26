@@ -14,13 +14,15 @@ public class PlayerMovement : MonoBehaviour
     public TextMesh playerMsg;
     public float tileAmount = 5f;
     public AudioClip wrong;
-    AudioSource Sound;
+    public AudioClip right;
+    public AudioClip winner;
+    AudioSource myAud;
 
     // Start is called before the first frame update
     void Start()
     {
         playerStart = playerPiece.position;
-        //Sound = GetComponent<>
+        myAud = GetComponent<AudioSource>();
 
     }
 
@@ -67,17 +69,18 @@ public class PlayerMovement : MonoBehaviour
 
             //the matching sound would go here, but I couldn't add it in.
             playerMsg.text = "Try Again";
+            myAud.PlayOneShot(wrong, 1f);
 
         }
 
         if (playerPiece.position == warpR.position) //Please leave me an example of an array text for several objects. Thank you!
         {
-
+            myAud.PlayOneShot(right, 1f);
             playerMsg.text = "Good Job!";
         }
         if (playerPiece.position == PlayerGoal.position)
         {
-
+            myAud.PlayOneShot(winner, 1f);
             playerMsg.text = "You Win!!!";
         }
     }
