@@ -7,7 +7,10 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector3 pos = new Vector3(5f, 10f, 15f);
     public Transform playerPiece;
+    public Transform Camera;
     public Transform warpR, warpW;
+    public Transform Key;
+    bool hasKey = false;
     public Transform Obstacle;
     public Transform PlayerGoal;
     public Vector3 playerStart;
@@ -29,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (Obstacle.position != playerPiece.position + new Vector3(0f, 0f, tileAmount))
@@ -75,8 +80,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (playerPiece.position == warpR.position) //Please leave me an example of an array text for several objects. Thank you!
         {
+            
             myAud.PlayOneShot(right, 1f);
+            playerPiece.position = new Vector3(520f, 30f, -96f);
+
             playerMsg.text = "Good Job!";
+
         }
         if (playerPiece.position == PlayerGoal.position)
         {
