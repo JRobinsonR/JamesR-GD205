@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Camera.position = playerPiece.position + new Vector3(6f, 39f, 1f);
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
