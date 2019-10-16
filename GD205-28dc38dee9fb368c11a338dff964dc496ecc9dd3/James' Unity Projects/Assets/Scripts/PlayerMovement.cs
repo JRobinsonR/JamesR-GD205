@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    //Change warps to tags for warps. 
     public Vector3 pos = new Vector3(5f, 10f, 15f);
     public Transform playerPiece;
     public Transform Camera;
@@ -88,6 +88,10 @@ public class PlayerMovement : MonoBehaviour
 
         }
         if (playerPiece.position == PlayerGoal.position)
+        {
+
+        }
+            if (playerPiece.position == PlayerGoal.position)
         {
             myAud.PlayOneShot(winner, 1f);
             playerMsg.text = "You Win!!!";

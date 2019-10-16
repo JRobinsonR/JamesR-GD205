@@ -6,6 +6,9 @@ public class PhysicalMotion : MonoBehaviour
 {
     public Rigidbody Anvil;
     public float oForce = 100f;
+    public Transform Camera;
+    public Transform playerPiece;
+
 
 
     private void Start()
@@ -15,7 +18,7 @@ public class PhysicalMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Camera.position = playerPiece.position + new Vector3(6f, 39f, 1f);
     }
 
 }
