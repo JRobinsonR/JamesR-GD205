@@ -18,7 +18,25 @@ public class PhysicalMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Camera.position = playerPiece.position + new Vector3(6f, 39f, 1f);
+        Camera.position = playerPiece.position + new Vector3(-25f, 10f, 0f);
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            playerPiece.position += new Vector3(0f, 0f, -1f);
+
+            //playerPiece.rotation += new Vector3(0f, 0f, -1f);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            playerPiece.position += new Vector3(0f, 0f, 1f);
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            playerPiece.position += new Vector3(1f, 0f, 0f);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            playerPiece.position += new Vector3(-1f, 0f, 0f);
+        }
     }
 
 }
