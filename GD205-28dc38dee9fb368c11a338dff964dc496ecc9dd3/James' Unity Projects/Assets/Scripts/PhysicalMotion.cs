@@ -5,37 +5,42 @@ using UnityEngine;
 public class PhysicalMotion : MonoBehaviour
 {
     public Rigidbody Anvil;
-    public float oForce = 100f;
+     
+    public float oForce = 125f;
     public Transform Camera;
-    public Transform playerPiece;
+    public Rigidbody playerPiece;
 
 
 
     private void Start()
     {
-        
+       playerPiece = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
     void Update()
     {
         Camera.position = playerPiece.position + new Vector3(-25f, 10f, 0f);
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            playerPiece.position += new Vector3(0f, 0f, -1f);
+            
+            playerPiece.AddForce(new Vector3(0f, 0f, -1f) * oForce);
 
-            //playerPiece.rotation += new Vector3(0f, 0f, -1f);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            playerPiece.position += new Vector3(0f, 0f, 1f);
+            playerPiece.AddForce(new Vector3(0f, 0f, 1f)* oForce);
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            playerPiece.position += new Vector3(1f, 0f, 0f);
+            playerPiece.AddForce(new Vector3(1f, 0f, 0f) * oForce);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            playerPiece.position += new Vector3(-1f, 0f, 0f);
+            playerPiece.AddForce(new Vector3(-1f, 0f, 0f) * oForce);
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerPiece.AddForce(new Vector3(0f, 50f, 0f) * oForce);
         }
     }
 
