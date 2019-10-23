@@ -6,10 +6,11 @@ public class PhysicalMotion : MonoBehaviour
 {
     public Rigidbody Anvil;
      public float[] Keys;
-     public float[] Arrays;
+     public float[] Enemies;
     public float oForce = 125f;
     public Transform Camera;
     public Rigidbody playerPiece;
+   
 
 
 
@@ -41,7 +42,7 @@ public class PhysicalMotion : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         { 
-        //if(){
+        //if(playerPiece.velocity.y==7){
             playerPiece.AddForce(new Vector3(0f, 50f, 0f) * oForce);
             //}
         }
