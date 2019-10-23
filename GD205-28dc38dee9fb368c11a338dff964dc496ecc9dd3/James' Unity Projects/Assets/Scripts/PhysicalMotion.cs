@@ -5,7 +5,7 @@ using UnityEngine;
 public class PhysicalMotion : MonoBehaviour
 {
     public Rigidbody Anvil;
-     
+     public float[] keys;
     public float oForce = 125f;
     public Transform Camera;
     public Rigidbody playerPiece;
@@ -39,8 +39,10 @@ public class PhysicalMotion : MonoBehaviour
             playerPiece.AddForce(new Vector3(-1f, 0f, 0f) * oForce);
         }
         if (Input.GetKeyDown(KeyCode.Space))
-        {
+        { 
+        //if(){
             playerPiece.AddForce(new Vector3(0f, 50f, 0f) * oForce);
+            //}
         }
     }
 
