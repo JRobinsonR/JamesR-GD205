@@ -5,7 +5,8 @@ using UnityEngine;
 public class PhysicalMotion : MonoBehaviour
 {
     public Rigidbody Anvil;
-     public float[] keys;
+     public float[] Keys;
+     public float[] Arrays;
     public float oForce = 125f;
     public Transform Camera;
     public Rigidbody playerPiece;
