@@ -8,6 +8,8 @@ TagManager:
   - WarpR
   - Landing
   - Obstacle
+  - Key
+  - Seeker
   layers:
   - Default
   - TransparentFX

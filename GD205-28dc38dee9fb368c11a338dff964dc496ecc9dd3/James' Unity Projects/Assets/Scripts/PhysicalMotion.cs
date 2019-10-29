@@ -5,18 +5,18 @@ using UnityEngine;
 public class PhysicalMotion : MonoBehaviour
 {
     public Rigidbody Anvil;
-     public float[] Keys;
-     public float[] Enemies;
+    public float[] Keys;
+    public float[] Enemies;
     public float oForce = 125f;
     public Transform Camera;
     public Rigidbody playerPiece;
-   
+
 
 
 
     private void Start()
     {
-       playerPiece = GetComponent<Rigidbody>();
+        playerPiece = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
     void Update()
@@ -24,13 +24,13 @@ public class PhysicalMotion : MonoBehaviour
         Camera.position = playerPiece.position + new Vector3(-25f, 10f, 0f);
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            
+
             playerPiece.AddForce(new Vector3(0f, 0f, -1f) * oForce);
 
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            playerPiece.AddForce(new Vector3(0f, 0f, 1f)* oForce);
+            playerPiece.AddForce(new Vector3(0f, 0f, 1f) * oForce);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
@@ -41,11 +41,20 @@ public class PhysicalMotion : MonoBehaviour
             playerPiece.AddForce(new Vector3(-1f, 0f, 0f) * oForce);
         }
         if (Input.GetKeyDown(KeyCode.Space))
-        { 
-        //if(playerPiece.velocity.y==7){
+        {
+            //if(playerPiece.velocity.y==7){
             playerPiece.AddForce(new Vector3(0f, 50f, 0f) * oForce);
             //}
         }
     }
 
+    void OnCollisionEnter(Collision grab)
+    {
+        if (grab.gameObject.name == "key")
+        {
+
+            Destroy(grab.gameObject);
+        }
+
+    }
 }

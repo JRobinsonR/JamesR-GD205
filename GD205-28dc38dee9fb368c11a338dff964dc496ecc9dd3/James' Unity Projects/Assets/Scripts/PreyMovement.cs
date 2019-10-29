@@ -11,6 +11,10 @@ public class PreyMovement : MonoBehaviour
     void Start()
     {
         Key = GetComponent<Rigidbody>();
+        if(target == null)
+        {
+            //target = GameObject.FindWithTag("Player");
+        }
     }
 
     // Update is called once per frame
@@ -18,5 +22,11 @@ public class PreyMovement : MonoBehaviour
     {
         Vector3 targetDir = Vector3.Normalize(target.position - transform.position);
         Key.AddForce(targetDir * -50f);
+
+       
+
     }
+
+    
 }
+
