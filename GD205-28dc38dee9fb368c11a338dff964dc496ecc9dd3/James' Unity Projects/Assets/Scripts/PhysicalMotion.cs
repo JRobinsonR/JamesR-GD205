@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PhysicalMotion : MonoBehaviour
 {
-    public Rigidbody Anvil;
+    
     public float[] Keys;
     public float[] Enemies;
-    public float oForce = 125f;
+    public float oForce = 250f;
     public Transform Camera;
     public Rigidbody playerPiece;
+    public TextMesh playerWin;
 
 
 
-
-    private void Start()
+    void Start()
     {
         playerPiece = GetComponent<Rigidbody>();
     }
@@ -24,27 +24,35 @@ public class PhysicalMotion : MonoBehaviour
         Camera.position = playerPiece.position + new Vector3(-25f, 10f, 0f);
         if (Input.GetKey(KeyCode.RightArrow))
         {
-
-            playerPiece.AddForce(new Vector3(0f, 0f, -1f) * oForce);
-
+            if (GetComponent<Rigidbody>() != null)
+            {
+                playerPiece.AddForce(new Vector3(0f, 0f, -3f) * oForce);
+            }
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            playerPiece.AddForce(new Vector3(0f, 0f, 1f) * oForce);
+            if (GetComponent<Rigidbody>() != null){
+            playerPiece.AddForce(new Vector3(0f, 0f, 3f) * oForce);
+        }
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
+            if (GetComponent<Rigidbody>() != null) {
             playerPiece.AddForce(new Vector3(1f, 0f, 0f) * oForce);
+            }
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            playerPiece.AddForce(new Vector3(-1f, 0f, 0f) * oForce);
+            if (GetComponent<Rigidbody>() != null)
+            {
+                playerPiece.AddForce(new Vector3(-1f, 0f, 0f) * oForce);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //if(playerPiece.velocity.y==7){
+            if (GetComponent<Rigidbody>() != null){
             playerPiece.AddForce(new Vector3(0f, 50f, 0f) * oForce);
-            //}
+            }
         }
     }
 
@@ -57,4 +65,5 @@ public class PhysicalMotion : MonoBehaviour
         }
 
     }
+    
 }

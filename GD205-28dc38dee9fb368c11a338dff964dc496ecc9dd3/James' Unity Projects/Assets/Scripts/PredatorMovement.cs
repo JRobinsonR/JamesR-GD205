@@ -27,6 +27,15 @@ public class PredatorMovement : MonoBehaviour
         if( collision.gameObject.name == "Player")
         {
             Destroy(collision.gameObject);
+            
+        }
+
+        
+    }
+    void OnDestroy()
+    {
+        if(gameObject.name == "Player" && gameObject == null)
+        {
             playerLoss.text = "DEAD";
         }
     }

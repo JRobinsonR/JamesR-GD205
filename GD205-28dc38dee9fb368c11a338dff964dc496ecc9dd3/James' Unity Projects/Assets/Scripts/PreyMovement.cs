@@ -7,6 +7,7 @@ public class PreyMovement : MonoBehaviour
     public float[] Collect;
     public Transform target;
     Rigidbody Key;
+    public TextMesh playerWin;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,12 @@ public class PreyMovement : MonoBehaviour
 
     }
 
-    
+    void OnDestroy()
+    {
+        if (Key == null)
+        {
+            playerWin.text = "You Win!";
+        }
+    }
 }
 
