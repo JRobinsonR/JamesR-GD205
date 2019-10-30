@@ -10,8 +10,8 @@ public class PhysicalMotion : MonoBehaviour
     public float oForce = 250f;
     public Transform Camera;
     public Rigidbody playerPiece;
-    public TextMesh playerWin;
-
+    public TextMesh playerStat;
+    
 
 
     void Start()
@@ -34,18 +34,19 @@ public class PhysicalMotion : MonoBehaviour
             if (GetComponent<Rigidbody>() != null){
             playerPiece.AddForce(new Vector3(0f, 0f, 3f) * oForce);
         }
+            
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
             if (GetComponent<Rigidbody>() != null) {
-            playerPiece.AddForce(new Vector3(1f, 0f, 0f) * oForce);
+            playerPiece.AddForce(new Vector3(5f, 0f, 0f) * oForce);
             }
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
             if (GetComponent<Rigidbody>() != null)
             {
-                playerPiece.AddForce(new Vector3(-1f, 0f, 0f) * oForce);
+                playerPiece.AddForce(new Vector3(-5f, 0f, 0f) * oForce);
             }
         }
         if (Input.GetKeyDown(KeyCode.Space))
@@ -58,12 +59,18 @@ public class PhysicalMotion : MonoBehaviour
 
     void OnCollisionEnter(Collision grab)
     {
-        if (grab.gameObject.name == "key")
+        if (grab.gameObject.CompareTag("Key"))
         {
 
             Destroy(grab.gameObject);
         }
 
     }
-    
+    void OnDestroy()
+    {
+        
+            playerStat.text = "DEAD";
+        
+    }
+
 }

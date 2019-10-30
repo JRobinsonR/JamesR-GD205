@@ -245,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Collect: []
   target: {fileID: 1892725644}
-  playerWin: {fileID: 1391715476}
+  playerStat: {fileID: 0}
 --- !u!1 &52715689
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Collect: []
   target: {fileID: 1892725644}
-  playerWin: {fileID: 1391715476}
+  playerStat: {fileID: 0}
 --- !u!1 &548196529
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Collect: []
   target: {fileID: 1892725644}
-  playerWin: {fileID: 1391715476}
+  playerStat: {fileID: 0}
 --- !u!1 &633183768
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +990,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Seeker: []
   target: {fileID: 1892725644}
-  playerLoss: {fileID: 1391715476}
 --- !u!1 &895789176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,7 +1200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Collect: []
   target: {fileID: 1892725644}
-  playerWin: {fileID: 1391715476}
+  playerStat: {fileID: 1391715476}
 --- !u!1 &1313817450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Collect: []
   target: {fileID: 1892725644}
-  playerWin: {fileID: 1391715476}
+  playerStat: {fileID: 0}
 --- !u!1 &1341202533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,7 +1435,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Seeker: []
   target: {fileID: 1892725644}
-  playerLoss: {fileID: 1391715476}
 --- !u!54 &1341202539
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2074,7 +2072,7 @@ MonoBehaviour:
   oForce: 100
   Camera: {fileID: 895789179}
   playerPiece: {fileID: 1892725645}
-  playerWin: {fileID: 1391715476}
+  playerStat: {fileID: 1391715476}
 --- !u!1 &1931309571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,7 +2399,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Seeker: []
   target: {fileID: 1892725644}
-  playerLoss: {fileID: 1391715476}
 --- !u!54 &2025594418
 Rigidbody:
   m_ObjectHideFlags: 0
