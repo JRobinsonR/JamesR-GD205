@@ -24,7 +24,7 @@ public class LaserRay : MonoBehaviour
             {
                 Vector3 whichDirection = Random.insideUnitSphere;
                 //hit.rigidbody.AddForce(Vector3.up * impactAmount);
-                Destroy(hit.rigidbody);
+                Destroy(hit.rigidbody.gameObject);
             }
         }
     }
