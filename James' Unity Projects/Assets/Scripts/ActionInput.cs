@@ -9,11 +9,16 @@ public class ActionInput : MonoBehaviour
     void Start()
     {
         myAnim = GetComponent<Animator>();
+        myAnim.SetFloat("New Float", 0F);
     }
 
     // Update is called once per frame
     void Update()
     {
-        myAnim.SetFloat("New Float", -2F);
+       if (Input.GetKey(KeyCode.UpArrow)) {
+
+            myAnim.SetFloat("New Float", 0.3f);
+
+        }
     }
 }
