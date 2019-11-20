@@ -97,4 +97,13 @@ public class PlayerMovement : MonoBehaviour
             playerMsg.text = "You Win!!!";
         }
     }
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Warp")
+    //    {
+    //        playerPiece.position = playerStart;
+    //        playerMsg.text = "Try Again";
+    //        myAud.PlayOneShot(wrong, 1f);
+    //    }
+    //}
 }
