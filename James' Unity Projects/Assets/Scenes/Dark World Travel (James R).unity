@@ -16168,7 +16168,7 @@ GameObject:
   - component: {fileID: 478174144}
   - component: {fileID: 478174143}
   m_Layer: 0
-  m_Name: 'warpR '
+  m_Name: warpR 1
   m_TagString: WarpR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17456,7 +17456,7 @@ GameObject:
   - component: {fileID: 508796326}
   - component: {fileID: 508796325}
   m_Layer: 0
-  m_Name: warpR
+  m_Name: warpR 4
   m_TagString: WarpR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18008,7 +18008,7 @@ GameObject:
   - component: {fileID: 539179190}
   - component: {fileID: 539179189}
   m_Layer: 0
-  m_Name: 'warpW '
+  m_Name: warpW 2
   m_TagString: Warp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32778,8 +32778,6 @@ MonoBehaviour:
   pos: {x: 5, y: 10, z: 15}
   playerPiece: {fileID: 1015257414}
   Camera: {fileID: 1505845172}
-  warpR: {fileID: 508796324}
-  warpW: {fileID: 2083739608}
   Key: {fileID: 0}
   Obstacle: {fileID: 1665727913}
   PlayerGoal: {fileID: 762917575}
@@ -45697,7 +45695,7 @@ GameObject:
   - component: {fileID: 1415860891}
   - component: {fileID: 1415860890}
   m_Layer: 0
-  m_Name: warpR
+  m_Name: warpR 2
   m_TagString: WarpR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46341,7 +46339,7 @@ GameObject:
   - component: {fileID: 1435624750}
   - component: {fileID: 1435624749}
   m_Layer: 0
-  m_Name: 'warpW '
+  m_Name: warpW 3
   m_TagString: Warp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50121,7 +50119,7 @@ GameObject:
   - component: {fileID: 1561485911}
   - component: {fileID: 1561485910}
   m_Layer: 0
-  m_Name: warpR
+  m_Name: warpR 3
   m_TagString: WarpR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56565,7 +56563,7 @@ GameObject:
   - component: {fileID: 1776651283}
   - component: {fileID: 1776651282}
   m_Layer: 0
-  m_Name: warpW
+  m_Name: warpW 1
   m_TagString: Warp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66133,7 +66131,7 @@ GameObject:
   - component: {fileID: 2083739610}
   - component: {fileID: 2083739609}
   m_Layer: 0
-  m_Name: warpW
+  m_Name: warpW 4
   m_TagString: Warp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

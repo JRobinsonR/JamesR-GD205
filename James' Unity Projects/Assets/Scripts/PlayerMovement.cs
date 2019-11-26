@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 pos = new Vector3(5f, 10f, 15f);
     public Transform playerPiece;
     public Transform Camera;
-    public Transform warpR, warpW;
+    GameObject[] warpR, warpW;
     public Transform Key;
     bool hasKey = false;
     public Transform Obstacle;
@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     {
         playerStart = playerPiece.position;
         myAud = GetComponent<AudioSource>();
+        warpW = GameObject.FindGameObjectsWithTag("warp");
+        warpR = GameObject.FindGameObjectsWithTag("warpR");
+
 
     }
 
@@ -68,34 +71,34 @@ public class PlayerMovement : MonoBehaviour
             }
         } //Need help modifying collisions so half the sphere doesn't go in before it stops.
 
-        if (playerPiece.position == warpW.position) //Please leave me an example of an array text for several objects. Thank you!
-        {
-            playerPiece.position = playerStart;
+        //if (playerPiece.position == warpW.position) //Please leave me an example of an array text for several objects. Thank you!
+        //{
+        //    playerPiece.position = playerStart;
 
-            //the matching sound would go here, but I couldn't add it in.
-            playerMsg.text = "Try Again";
-            myAud.PlayOneShot(wrong, 1f);
+        //    //the matching sound would go here, but I couldn't add it in.
+        //    playerMsg.text = "Try Again";
+        //    myAud.PlayOneShot(wrong, 1f);
 
-        }
+        //}
 
-        if (playerPiece.position == warpR.position) //Please leave me an example of an array text for several objects. Thank you!
-        {
-            
-            myAud.PlayOneShot(right, 1f);
-            playerPiece.position = new Vector3(520f, 30f, -96f);
+        //if (playerPiece.position == warpR.position) //Please leave me an example of an array text for several objects. Thank you!
+        //{
 
-            playerMsg.text = "Good Job!";
+        //    myAud.PlayOneShot(right, 1f);
+        //    playerPiece.position = new Vector3(520f, 30f, -96f);
 
-        }
-        if (playerPiece.position == PlayerGoal.position)
-        {
+        //    playerMsg.text = "Good Job!";
 
-        }
-            if (playerPiece.position == PlayerGoal.position)
-        {
-            myAud.PlayOneShot(winner, 1f);
-            playerMsg.text = "You Win!!!";
-        }
+        //}
+        //if (playerPiece.position == PlayerGoal.position)
+        //{
+
+        //}
+        //    if (playerPiece.position == PlayerGoal.position)
+        //{
+        //    myAud.PlayOneShot(winner, 1f);
+        //    playerMsg.text = "You Win!!!";
+        //}
     }
     //void OnCollisionEnter(Collision collision)
     //{
