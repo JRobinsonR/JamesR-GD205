@@ -11,12 +11,14 @@ public class PhysicalMotion : MonoBehaviour
     public Transform Camera;
     public Rigidbody playerPiece;
     public TextMesh playerStat;
-    
-
+    AudioSource RollAud;
+    public AudioClip Dead;
+    public AudioClip Winner;
 
     void Start()
     {
         playerPiece = GetComponent<Rigidbody>();
+        RollAud = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -70,6 +72,8 @@ public class PhysicalMotion : MonoBehaviour
     {
         
             playerStat.text = "DEAD";
+        
+        
         
     }
 

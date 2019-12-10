@@ -8,10 +8,14 @@ public class PredatorMovement : MonoBehaviour
     public Transform target;
     Rigidbody Enemy;
     
+    public AudioClip Dead;
+    public AudioClip Winner;
+    AudioSource RollAud;
     // Start is called before the first frame update
     void Start()
     {
         Enemy = GetComponent<Rigidbody>();
+        RollAud = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,10 +29,10 @@ public class PredatorMovement : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if( collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
-            
+            RollAud.PlayOneShot(Dead, 1f);
         }
 
         

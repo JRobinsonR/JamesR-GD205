@@ -3,7 +3,12 @@ guid: e6d96caa4dcb841e68071aeb2b7709ff
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Camera: {instanceID: 0}
+  - playerPiece: {instanceID: 0}
+  - playerStat: {instanceID: 0}
+  - Dead: {fileID: 8300000, guid: fcda000bf874a457aa58ea1b54fa5645, type: 3}
+  - Winner: {fileID: 8300000, guid: cd9c1b1b765df4020902bdf1e9356305, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
