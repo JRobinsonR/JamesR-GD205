@@ -57,6 +57,13 @@ public class PhysicalMotion : MonoBehaviour
             playerPiece.AddForce(new Vector3(0f, 50f, 0f) * oForce);
             }
         }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (GetComponent<Rigidbody>() != null)
+            {
+                playerPiece.AddForce(new Vector3(0f, -550f, 0f) * oForce);
+            }
+        }
     }
 
     void OnCollisionEnter(Collision grab)

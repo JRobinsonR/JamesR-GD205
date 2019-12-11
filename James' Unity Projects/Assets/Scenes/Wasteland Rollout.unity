@@ -2065,8 +2065,8 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391715475}
-  m_Text: "Up Arrow= Forward                             \nDown Arrow= Backward\nLeft
-    Arrow= Move Left\nRight Arrow= Move Right"
+  m_Text: "Up Arrow = Forward                             \nDown Arrow = Backward\nLeft
+    Arrow = Move Left\nRight Arrow = Move Right\nSpacebar = Jump\nB Key = Fast Drop"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
