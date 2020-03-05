@@ -27,17 +27,19 @@ public class PlayerMovement : MonoBehaviour
     {
         playerStart = playerPiece.position;
         myAud = GetComponent<AudioSource>();
-        if (warpW == null) { warpW = GameObject.FindGameObjectsWithTag("warp"); }
-       if (warpR == null) { warpR = GameObject.FindGameObjectsWithTag("warpR"); }
-
-        if (warpW.Length == 0) { Debug.Log("No warpW found"); }
-        if (warpR.Length == 0) { Debug.Log("Nothing"); }
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (warpW == null) { warpW = GameObject.FindGameObjectsWithTag("warp"); }
+        if (warpR == null) { warpR = GameObject.FindGameObjectsWithTag("warpR"); }
+
+        if (warpW.Length == 0) { Debug.Log("No warpW found"); }
+        if (warpR.Length == 0) { Debug.Log("Nothing"); }
+
         Camera.position = playerPiece.position + new Vector3(6f, 39f, 1f);
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
