@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ActionInput : MonoBehaviour
 {
+    float Value = 0.3f;
     Animator myAnim;
     // Start is called before the first frame update
     void Start()
     {
         myAnim = GetComponent<Animator>();
-        myAnim.SetFloat("New Float", 0F);
+        myAnim.SetFloat("MotionParameter", Value);
     }
 
     // Update is called once per frame
@@ -17,8 +18,12 @@ public class ActionInput : MonoBehaviour
     {
        if (Input.GetKey(KeyCode.UpArrow)) {
 
-            myAnim.SetFloat("New Float", 0.3f);
+            myAnim.SetFloat("MotionParameter", 0.8f);
 
+        }
+       if(Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            myAnim.SetFloat("MotionParameter", Value);
         }
     }
 }

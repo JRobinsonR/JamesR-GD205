@@ -8,7 +8,18 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 pos = new Vector3(5f, 10f, 15f);
     public Transform playerPiece;
     public Transform Camera;
-    public GameObject[] warpR, warpW;
+    int index1A;
+    int index1B;
+    int index2A;
+    int index2B;
+    int index3A;
+    int index3B;
+    private GameObject[] warpR;
+    private Transform[] warpR2;
+    private GameObject[] warpW;
+    private Transform[] warpW2;
+    private GameObject[] landing;
+    private Transform[] landingTF;
     public Transform Key;
     bool hasKey = false;
     public Transform Obstacle;
@@ -27,18 +38,27 @@ public class PlayerMovement : MonoBehaviour
     {
         playerStart = playerPiece.position;
         myAud = GetComponent<AudioSource>();
-        
-
+        warpR = GameObject.FindGameObjectsWithTag("WarpR");
+        warpR2 = new Transform[warpR.Length];
+        warpW = GameObject.FindGameObjectsWithTag("Warp");
+        warpW2 = new Transform[warpW.Length];
+        landing = GameObject.FindGameObjectsWithTag("Landing");
+        index1A = Random.Range(0, landing.Length);
+        index1B = Random.Range(0, landing.Length);
+        index2A = Random.Range(0, warpR.Length);
+        index2B = Random.Range(0, warpR.Length);
+        index3A = Random.Range(0, warpW.Length);
+        index3B = Random.Range(0, warpW2.Length);
+        landingTF = new Transform[landing.Length];
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (warpW == null) { warpW = GameObject.FindGameObjectsWithTag("warp"); }
-        if (warpR == null) { warpR = GameObject.FindGameObjectsWithTag("warpR"); }
-
-        if (warpW.Length == 0) { Debug.Log("No warpW found"); }
-        if (warpR.Length == 0) { Debug.Log("Nothing"); }
+        for(int index1B = 0; index1B < landing.Length; index1B++)
+        {
+            landingTF[index1B] = landing[index1B].transform;
+        }
 
         Camera.position = playerPiece.position + new Vector3(6f, 39f, 1f);
 
@@ -77,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (playerPiece.position == PlayerGoal.position)
+        if (playerPiece.position == warpR2[].position)
         {
 
         }
@@ -87,13 +107,18 @@ public class PlayerMovement : MonoBehaviour
             playerMsg.text = "You Win!!!";
         }
     }
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Warp"))
-        {
-            playerPiece.position = playerStart;
-            playerMsg.text = "Try Again";
-            myAud.PlayOneShot(wrong, 1f);
-        }
-    }
+    //void OnCollisionEnter(Collision collision)
+    //{
+        //if (collision.gameObject.CompareTag("Warp"))
+        //{
+            //playerPiece.position = playerStart;
+            //playerMsg.text = "Try Again";
+            //myAud.PlayOneShot(wrong, 1f);
+        //}
+        //if (collision.gameObject.CompareTag("WarpR"))
+        ////{
+           // Vector3 position = landingTF[index2].position;
+           // playerPiece.position = position;
+        //}
+    //}
 }
